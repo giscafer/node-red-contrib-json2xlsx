@@ -1,15 +1,3 @@
-# node-red-contrib-json2xlsx
-
-base on: [json-as-xlsx](https://github.com/LuisEnMarroquin/json-as-xlsx)
-
-`json-xlsx` node convert an object array to an Xlsx buffered file output.
-For example you could convert an sql table output to a file, o send it as attachment by e-mail.
-
-## Usage
-
-### Example flow
-
-```json
 [
   {
     "id": "25dbe814222163d1",
@@ -98,8 +86,3 @@ For example you could convert an sql table output to a file, o send it as attach
     "wires": [["4220bfbef7af0259", "4d514166bebd7a3e"]]
   }
 ]
-```
-
-## License
-
-MIT
