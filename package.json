@@ -1,0 +1,25 @@
+{
+  "name": "node-red-contrib-json2xlsx",
+  "version": "1.0.0",
+  "description": "Convert a json payload to xlsx buffered file",
+  "main": "json-xlsx/json-xlsx.js",
+  "author": "Nicky<giscafer@outlook.com>",
+  "keywords": [
+    "node-red",
+    "JSON to excel",
+    "xlsx"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giscafer/node-red-contrib-json2xlsx.git"
+  },
+  "license": "MIT",
+  "node-red": {
+    "nodes": {
+      "json-xlsx": "json-xlsx/json-xlsx.js"
+    }
+  },
+  "dependencies": {
+    "json-as-xlsx": "^2.5.6"
+  }
+}

@@ -1,0 +1,71 @@
+<script type="text/javascript">
+  RED.nodes.registerType('json-xlsx', {
+    category: 'parser',
+    color: '#217346',
+    defaults: {
+      name: { value: '' },
+      filename: { value: '' },
+      topic: { value: '' },
+      sheetName: { value: 'Sheet1' },
+      description: { value: '' },
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'font-awesome/fa-file-excel-o',
+    label: function () {
+      return this.name || 'json to xlsx';
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="json-xlsx">
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name" />
+  </div>
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-file-o"></i> File name</label>
+    <input type="text" id="node-input-name" placeholder="File name" />
+  </div>
+  <div class="form-row">
+    <label for="node-input-sheetName"
+      ><i class="fa fa-file-excel-o"></i> Sheet name</label
+    >
+    <input type="text" id="node-input-sheetName" placeholder="Sheet name" />
+  </div>
+  <div class="form-row">
+    <label for="node-input-topic"><i class="fa fa-tag"></i> Topic name</label>
+    <input type="text" id="node-input-topic" placeholder="Topic" />
+  </div>
+  <div class="form-row">
+    <label for="node-input-description"
+      ><i class="fa fa-file-archive-o"></i> Description</label
+    >
+    <textarea
+      id="node-input-description"
+      name="description"
+      rows="4"
+      cols="80"
+      placeholder="Please input file description"
+    ></textarea>
+  </div>
+</script>
+
+<script type="text/html" data-help-name="json-xlsx">
+  <p>Converts the payload from a json object array into a buffered xlsx file</p>
+  <h3>Details</h3>
+  <p><code>msg.payload</code> should contains a JSON array of objects.</p>
+  <p>
+    <code>File name</code>
+    文件名称，可以使用<code>msg.name</code>来动态设置文件名称
+  </p>
+  <p>
+    <code>Sheet name</code> Sheet
+    名称，可以使用<code>msg.sheetName</code>来动态设置Sheet名称
+  </p>
+  <p>
+    <code>Topic</code>
+    邮件标题，可以使用<code>msg.topic</code>来动态设置邮件主题
+  </p>
+  <p><code>Description</code> 描述信息，邮件内容</p>
+</script>
